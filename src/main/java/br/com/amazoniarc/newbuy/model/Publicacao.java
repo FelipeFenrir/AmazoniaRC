@@ -3,10 +3,10 @@ package br.com.amazoniarc.newbuy.model;
 import br.com.amazoniarc.newbuy.enums.CategoriaLeitura;
 
 /**
- * Representação do modelo de produto do tipo ParaLeitura.
+ * Representação do modelo de produto do tipo Publicacao.
  * @author felipe.batista
  */
-public class ParaLeitura extends EmMidia {
+public class Publicacao extends EmMidia {
 
     private Integer numeroPaginas;
     private long codigoISBN;

@@ -1,4 +1,4 @@
-package br.com.amazoniarc.newbuy.pojo;
+package br.com.amazoniarc.newbuy.business.frete;
 
 import java.net.URISyntaxException;
 

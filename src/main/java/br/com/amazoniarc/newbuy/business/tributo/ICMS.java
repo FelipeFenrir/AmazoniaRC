@@ -1,8 +1,8 @@
-package br.com.amazoniarc.newbuy.pojo;
+package br.com.amazoniarc.newbuy.business.tributo;
 
 import br.com.amazoniarc.newbuy.model.Pedido;
 import br.com.amazoniarc.newbuy.model.Produto;
-import br.com.amazoniarc.newbuy.model.ParaLeitura;
+import br.com.amazoniarc.newbuy.model.Publicacao;
 import br.com.amazoniarc.newbuy.interfaces.Tributo;
 
 /**
@@ -38,7 +38,7 @@ public class ICMS implements Tributo {
     }
 
     private boolean temInsencao(Produto produto) {
-        if (produto instanceof ParaLeitura) {
+        if (produto instanceof Publicacao) {
             return false;
         }
         return true;

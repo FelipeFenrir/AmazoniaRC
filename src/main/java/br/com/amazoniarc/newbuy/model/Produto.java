@@ -4,6 +4,7 @@ import java.util.List;
 
 /**
  * Modelo de representação de um Produto.
+ *
  * @author felipe.batista
  */
 public class Produto extends Identificador {
@@ -16,6 +17,36 @@ public class Produto extends Identificador {
     private Double largura;
     private String diametro;
     private List<CupomDesconto> cuponsDeDesconto;
+
+    /**
+     * Construtor Padrão.
+     */
+    Produto() {
+    }
+
+    /**
+     * Construtor Completo.
+     * @param descricao
+     * @param preco
+     * @param peso
+     * @param comprimento
+     * @param altura
+     * @param largura
+     * @param diametro
+     * @param cuponsDeDesconto
+     */
+    Produto(String descricao, Double preco, String peso,
+            Double comprimento, Double altura, Double largura,
+            String diametro, List<CupomDesconto> cuponsDeDesconto) {
+        this.descricao = descricao;
+        this.preco = preco;
+        this.peso = peso;
+        this.comprimento = comprimento;
+        this.altura = altura;
+        this.largura = largura;
+        this.diametro = diametro;
+        this.cuponsDeDesconto = cuponsDeDesconto;
+    }
 
     public String getDescricao() {
         return descricao;
@@ -79,5 +110,45 @@ public class Produto extends Identificador {
 
     public void setCuponsDeDesconto(List<CupomDesconto> cuponsDeDesconto) {
         this.cuponsDeDesconto = cuponsDeDesconto;
+    }
+
+    /**
+     * Builder com medidas.
+     *
+     * @param pesoProduto
+     * @param comprimentoProduto
+     * @param alturaProduto
+     * @param diametroProduto
+     * @return Produto.
+     */
+    Produto com(String pesoProduto, Double comprimentoProduto,
+            Double alturaProduto, String diametroProduto) {
+        this.setPeso(pesoProduto);
+        this.setComprimento(comprimentoProduto);
+        this.setAltura(alturaProduto);
+        this.setDiametro(diametroProduto);
+        return this;
+    }
+
+    /**
+     * Adição de Descrição.
+     *
+     * @param descricaoProduto
+     * @return Produto.
+     */
+    Produto descrito(String descricaoProduto) {
+        this.setDescricao(descricaoProduto);
+        return this;
+    }
+
+    /**
+     * Adição de Cupons.
+     *
+     * @param cupons
+     * @return Produto.
+     */
+    Produto cuponsVinculados(List<CupomDesconto> cupons) {
+        this.setCuponsDeDesconto(cupons);
+        return this;
     }
 }

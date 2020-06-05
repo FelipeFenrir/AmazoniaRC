@@ -1,4 +1,4 @@
-package br.com.amazoniarc.newbuy.pojo;
+package br.com.amazoniarc.newbuy.business.desconto;
 
 import br.com.amazoniarc.newbuy.interfaces.Desconto;
 import br.com.amazoniarc.newbuy.model.CupomDesconto;

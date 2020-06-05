@@ -20,16 +20,17 @@ import br.com.amazoniarc.newbuy.business.pagamento.CartaoCredito;
 import br.com.amazoniarc.newbuy.business.confirmacao.PorEmail;
 import br.com.amazoniarc.newbuy.business.venda.ConfirmarPedido;
 import br.com.amazoniarc.newbuy.business.venda.ObterFrete;
-import br.com.amazoniarc.newbuy.pojo.AplicarDesconto;
+import br.com.amazoniarc.newbuy.business.desconto.AplicarDesconto;
 import br.com.amazoniarc.newbuy.business.venda.EfetuarPagamento;
 import br.com.amazoniarc.newbuy.enums.CategoriaFilme;
 import br.com.amazoniarc.newbuy.enums.CategoriaLeitura;
 import br.com.amazoniarc.newbuy.enums.TipoEndereco;
-import br.com.amazoniarc.newbuy.pojo.FreteCorreios;
+import br.com.amazoniarc.newbuy.business.frete.FreteCorreios;
 import br.com.amazoniarc.newbuy.interfaces.ConfimacaoCompra;
 import br.com.amazoniarc.newbuy.interfaces.Tributo;
 import br.com.amazoniarc.newbuy.model.CupomDesconto;
-import br.com.amazoniarc.newbuy.pojo.ICMS;
+import br.com.amazoniarc.newbuy.business.tributo.ICMS;
+import br.com.amazoniarc.newbuy.factory.Fabrica;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 
@@ -40,6 +41,7 @@ import java.util.Map;
 
 /**
  * Classe principal.
+ *
  * @author felipe.batista
  */
 public class NewBuy {
@@ -48,6 +50,7 @@ public class NewBuy {
 
     /**
      * Metodo de Inicio.
+     *
      * @param args
      */
     public static void main(String[] args) {
@@ -70,7 +73,7 @@ public class NewBuy {
         System.out.println("No valor total de: ".concat(
                 NumberFormat.getCurrencyInstance().format(
                         pedido.getValorTotal())).concat(
-                                " (Sem Frete, Desconto e Tributos)."));
+                " (Sem Frete, Desconto e Tributos)."));
 
         System.out.println("O cliente usou um cupom de desconto.");
         Desconto desconto = new AplicarDesconto();
@@ -101,7 +104,8 @@ public class NewBuy {
     }
 
     private static Produto preparaProdutoTeste() {
-        Produto produto = new Produto();
+        Fabrica<Produto> factory = Fabrica.getInstance(Produto.class);
+        Produto produto = factory.getInstance();
         produto.setPreco(90.00);
         produto.setAltura(0.0);
         produto.setComprimento(0.0);
@@ -112,7 +116,8 @@ public class NewBuy {
     }
 
     private static Filme preparaFilmeTeste() {
-        Filme filme = new Filme();
+        Fabrica<Filme> factory = Fabrica.getInstance(Filme.class);
+        Filme filme = factory.getInstance();
         filme.setPreco(90.00);
         filme.setAltura(0.0);
         filme.setComprimento(0.0);
@@ -120,12 +125,13 @@ public class NewBuy {
         filme.setLargura(0.0);
         filme.setDiametro("0");
         filme.setPeso("0.3");
-        filme.setCategoria(CategoriaFilme.ACAO);
+        filme.setCategoria(CategoriaFilme.ACAO);        
         return filme;
     }
 
     private static Revista preparaRevistaTeste() {
-        Revista revista = new Revista();
+        Fabrica<Revista> factory = Fabrica.getInstance(Revista.class);
+        Revista revista = factory.getInstance();
         revista.setPreco(22.00);
         revista.setAltura(0.32);
         revista.setComprimento(0.24);
