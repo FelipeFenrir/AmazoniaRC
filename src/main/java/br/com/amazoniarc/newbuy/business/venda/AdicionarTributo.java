@@ -28,6 +28,7 @@ public class AdicionarTributo implements Venda {
      * Aplica o tributo no pedido.
      */
     public void concluir() {
+        System.out.println("Os tributos foram calculados.");
         pedido.adicionarNoTotal(tributo.calcular());
     }
 

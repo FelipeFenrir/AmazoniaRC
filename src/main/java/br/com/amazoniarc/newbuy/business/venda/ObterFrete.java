@@ -29,6 +29,7 @@ public class ObterFrete implements Venda {
      * Método de conclusão de Compra.
      */
     public void concluir() {
+        System.out.println("Cliente confirmou endereço de entrega e cobrança.");
         pedido.adicionarNoTotal(frete.calcular());
     }
 

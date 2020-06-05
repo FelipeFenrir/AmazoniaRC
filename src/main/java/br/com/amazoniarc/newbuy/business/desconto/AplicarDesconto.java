@@ -5,6 +5,8 @@ import br.com.amazoniarc.newbuy.model.CupomDesconto;
 import br.com.amazoniarc.newbuy.model.Pedido;
 import br.com.amazoniarc.newbuy.model.Produto;
 
+import java.text.NumberFormat;
+
 /**
  * Implementação de desconto via Cupom para ser aplicado pelo próprio cliente.
  *
@@ -41,6 +43,8 @@ public class AplicarDesconto implements Desconto {
                 desconto += valorDesconto;
             }
         }
+        System.out.println("O desconto é ".concat(
+                NumberFormat.getCurrencyInstance().format(desconto)));
         return desconto;
     }
 }

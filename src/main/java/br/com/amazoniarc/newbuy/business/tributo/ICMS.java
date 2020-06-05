@@ -5,6 +5,8 @@ import br.com.amazoniarc.newbuy.model.Produto;
 import br.com.amazoniarc.newbuy.model.Publicacao;
 import br.com.amazoniarc.newbuy.interfaces.Tributo;
 
+import java.text.NumberFormat;
+
 /**
  * Representacao do Tributo do tipo ICMS.
  *
@@ -34,6 +36,8 @@ public class ICMS implements Tributo {
                 tributo += produto.getPreco() * POR_CENTO;
             }
         }
+        System.out.println("O ICMS é ".concat(
+                NumberFormat.getCurrencyInstance().format(tributo)));
         return tributo;
     }
 

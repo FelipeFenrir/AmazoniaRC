@@ -31,6 +31,7 @@ public class AdicionarDesconto implements Venda {
      * Aplica o desconto no pedido.
      */
     public void concluir() {
+        System.out.println("O cliente usou um cupom de desconto.");
         pedido.removerNoTotal(desconto.aplicar(pedido, codigo));
     }
 

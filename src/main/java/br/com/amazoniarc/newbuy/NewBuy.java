@@ -75,13 +75,10 @@ public class NewBuy {
                         pedido.getValorTotal())).concat(
                 " (Sem Frete, Desconto e Tributos)."));
 
-        System.out.println("O cliente usou um cupom de desconto.");
         Desconto desconto = new AplicarDesconto();
 
         Tributo tributo = new ICMS(pedido);
-        System.out.println("Os tributos foram calculados.");
 
-        System.out.println("Cliente confirmou endereço de entrega e cobrança.");
         Frete frete = new FreteCorreios(
                 enderecoOrigem(),
                 cliente.getEnderecoEntrega(),
