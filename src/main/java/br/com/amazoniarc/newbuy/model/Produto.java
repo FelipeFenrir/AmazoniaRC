@@ -18,36 +18,6 @@ public class Produto extends Identificador {
     private String diametro;
     private List<CupomDesconto> cuponsDeDesconto;
 
-    /**
-     * Construtor Padrão.
-     */
-    Produto() {
-    }
-
-    /**
-     * Construtor Completo.
-     * @param descricao
-     * @param preco
-     * @param peso
-     * @param comprimento
-     * @param altura
-     * @param largura
-     * @param diametro
-     * @param cuponsDeDesconto
-     */
-    Produto(String descricao, Double preco, String peso,
-            Double comprimento, Double altura, Double largura,
-            String diametro, List<CupomDesconto> cuponsDeDesconto) {
-        this.descricao = descricao;
-        this.preco = preco;
-        this.peso = peso;
-        this.comprimento = comprimento;
-        this.altura = altura;
-        this.largura = largura;
-        this.diametro = diametro;
-        this.cuponsDeDesconto = cuponsDeDesconto;
-    }
-
     public String getDescricao() {
         return descricao;
     }

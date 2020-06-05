@@ -65,6 +65,6 @@ Foi abusado de conceitos de herança, onde foi preparada uma classe de identific
 
 Foram criados enums para representar constates necessárias.
 
-Essa solução teve aplicação de **O**rientação a **O**bjetos, **Herança** e **Polimorfismo** que unido ao padrão **STRATEGY** foi usado para criar uma "lista de ações".
+Essa solução teve aplicação de **O**rientação a **O**bjetos e **Herança** que unido ao padrão **STRATEGY** foi usado para criar uma "lista de ações", ações essas que usam o padrão **DECORATOR** da interface Venda.
 
 Ao executar a aplicação foi feito um teste em Console para exemplificar a utilização da aplicação.
